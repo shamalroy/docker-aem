@@ -5,7 +5,7 @@ MAINTAINER Shamal Roy <shamal.roy@gmail.com>
 
 # Install add-apt-repository command dependency
 RUN apt-get update
-RUN apt-get -y install software-properties-common
+RUN apt-get -y install software-properties-common nano
 
 # Install Java.
 RUN \
@@ -27,7 +27,11 @@ CMD ["bash"]
 
 COPY jar /var/aem
 
-WORKDIR /var/aem
 RUN java -jar -Xmx1024M /var/aem/cq-quickstart-6.1.0.jar -unpack
+
+COPY install /var/aem/crx-quickstart/_install
+COPY init.py /var/aem/crx-quickstart/init.py
+
+WORKDIR /var/aem/crx-quickstart
 
 EXPOSE 4502 5005 4503 5006

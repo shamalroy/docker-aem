@@ -1,3 +1,5 @@
 jar/*
 !jar/README.md
+install/*
+!install/README.md
 *.DS_Store
