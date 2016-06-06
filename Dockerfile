@@ -29,3 +29,5 @@ COPY jar /var/aem
 
 WORKDIR /var/aem
 RUN java -jar -Xmx1024M /var/aem/cq-quickstart-6.1.0.jar -unpack
+
+EXPOSE 4502 5005 4503 5006
