@@ -1,2 +1,3 @@
-jar/*.*
+jar/*
+!jar/README.md
 *.DS_Store
